@@ -27,15 +27,18 @@
        xihorizontal-scroll-policy="auto"
        xieditable="true"
        xiselection-mode="singleRow"
-       xienable-footers="false">
+       xienable-footers="true">
 
 
     <level xienable-paging="true" xipage-size="25" xienable-filters="true" xiselected-key-field="employeeId"
 
-           xienable-footers="false"  
+           xienable-footers="true"  
         
            xireuse-previous-level-columns="true" xichildren-field="PositionDataChildFXItem"
-           xifilter-page-sort-change="filterPageSortChangeHandler" xifilter-page-sort-mode="server">
+           xifilter-page-sort-change="filterPageSortChangeHandler" xifilter-page-sort-mode="server"
+           
+       xifooter-horizontal-grid-lines="true"
+       xifooter-horizontal-grid-line-color="0xff0000">
 
       <columns>
 
@@ -83,4 +86,109 @@
 
   </div>
 
+</div>
+<div fd-grid="" id="gridContainer_APartByProdGroup" [(model)]="gridOptions" style="height: 600px; width: 100%;"
+xienable-Drill-Down="true"
+xienable-Preference-Persistence="true"
+xienable-Export="true"
+xiforce-Pager-Row="false"
+xienable-Multi-Column-Sort="false"
+xienable-Copy="true"
+xienable-Print="false"
+xihorizontal-Scroll-Policy="off"
+xienable-Footers="true"
+xiselection-Mode="singleRow"
+xienable-Height-Auto-Adjust="true"
+xienable-Dynamic-Levels="true"
+xienable-Height-AutoAdjust="true"
+xicolumn-Group-Colors="[0x6699ff, 0x6699ff]"
+xienable-Filters="true"  >
+
+
+
+  <level xienable-Paging="false" xienable-Filters="true" xienable-Footers="false" xiselected-Key-Field="key">
+    <columns>
+
+      <column xicolumn-Width-Mode="percent" xipercent-Width="9.09" xiheader-Text="SBU Line" xidata-Field="salesSbu" xiheader-Align="middle" xitext-Align="left"
+        xifilter-Control="MultiSelectComboBox" xifilter-Combo-Box-Build-From-Grid="true" xienable-Filter-AutoComplete="true"
+        xisort-Case-Insensitive="true"  xifooter-Label="Count:" xifooter-Operation="count"></column>
+
+      <column xicolumn-Width-Mode="percent" xipercent-Width="9.09" xiheader-Text="Type" xidata-Field="prodType" xiheader-Align="middle" xifilter-Control="MultiSelectComboBox"
+        xifilter-Combo-Box-Build-From-Grid="true" xienable-Filter-AutoComplete="true"
+        xiuse-Under-Line="true" xiuse-Hand-Cursor="true"></column>
+
+      <column xicolumn-Width-Mode="percent" xipercent-Width="9.09" xiheader-Text="Tech" xidata-Field="tech" xiheader-Align="middle" xitext-Align="left" xifilter-Control="MultiSelectComboBox"
+        xifilter-Combo-Box-Build-From-Grid="true" xienable-Filter-AutoComplete="true" ></column>
+
+      <column-Group xiheader-Text="201807">
+        <columns>
+
+          <column-Group xiheader-Text="Forecast Target">
+            <columns>
+              <column xicolumn-Width-Mode="percent" xipercent-Width="9.09" xiheader-Text="BP" xidata-Field="bpAmtNt" xiheader-Align="middle" xitext-Align="right"
+                xifilter-Control="NumericRangeBox" xisort-Case-Insensitive="true" xiheader-Colors="[0x6699ff, 0x6699ff]"
+                xilabel-Function="flexiciousNmsp.UIUtils.dataGridFormatCurrencyLabelFunction" ></column>
+
+              <column xicolumn-Width-Mode="percent" xipercent-Width="9.09" xiheader-Text="R07" xidata-Field="rollAmtNt" xiheader-Align="middle" xitext-Align="right"
+                xifilter-Control="NumericRangeBox" xisort-Case-Insensitive="true" xiheader-Colors="[0x6699ff, 0x6699ff]"
+                xilabel-Function="flexiciousNmsp.UIUtils.dataGridFormatCurrencyLabelFunction" ></column>
+            </columns>
+          </column-Group>
+
+          <column-Group xiheader-Text="Ship + Backlog">
+            <columns>
+              <column xicolumn-Width-Mode="percent" xipercent-Width="9.09" xiheader-Text="本月累計" xidata-Field="currSbAmtNt" xiheader-Align="middle" xitext-Align="right"
+                xifilter-Control="NumericRangeBox" xisort-Case-Insensitive="true" xiheader-Colors="[0x6699ff, 0x6699ff]"
+                xilabel-Function="flexiciousNmsp.UIUtils.dataGridFormatCurrencyLabelFunction"  ></column>
+
+              <column xicolumn-Width-Mode="percent" xipercent-Width="9.09" xiheader-Text="Yesterday" xidata-Field="sbAmtNtLastday" xiheader-Align="middle" xitext-Align="right"
+                xifilter-Control="NumericRangeBox" xisort-Case-Insensitive="true" xiheader-Colors="[0x6699ff, 0x6699ff]"
+                xilabel-Function="flexiciousNmsp.UIUtils.dataGridFormatCurrencyLabelFunction" ></column>
+            </columns>
+          </column-Group>
+
+          <column-Group xiheader-Text="Order in">
+            <columns>
+              <column xicolumn-Width-Mode="percent" xipercent-Width="9.09" xiheader-Text="本月累計" xidata-Field="ordInAmtNt" xiheader-Align="middle" xitext-Align="right"
+                xifilter-Control="NumericRangeBox" xisort-Case-Insensitive="true" xiheader-Colors="[0x6699ff, 0x6699ff]"
+                xilabel-Function="flexiciousNmsp.UIUtils.dataGridFormatCurrencyLabelFunction"></column>
+
+              <column xicolumn-Width-Mode="percent" xipercent-Width="9.09" xiheader-Text="Yesterday" xidata-Field="ordInAmtNtLastday" xiheader-Align="middle" xitext-Align="right"
+                xifilter-Control="NumericRangeBox" xisort-Case-Insensitive="true" xiheader-Colors="[0x6699ff, 0x6699ff]"
+                xilabel-Function="flexiciousNmsp.UIUtils.dataGridFormatCurrencyLabelFunction" ></column>
+            </columns>
+          </column-Group>
+
+
+        </columns>
+      </column-Group>
+
+
+      <column-Group xiheader-Text="201808">
+        <columns>
+
+          <column-Group xiheader-Text="Backlog">
+            <columns>
+              <column xicolumn-Width-Mode="percent" xipercent-Width="9.09" xiheader-Text="本月累計" xidata-Field="nextBklgAmtNt" xiheader-Align="middle" xitext-Align="right"
+                xifilter-Control="NumericRangeBox" xisort-Case-Insensitive="true" xiheader-Colors="[0x6699ff, 0x6699ff]"
+                xilabel-Function="flexiciousNmsp.UIUtils.dataGridFormatCurrencyLabelFunction"></column>
+            </columns>
+          </column-Group>
+        </columns>
+      </column-Group>
+
+      <column-Group xiheader-Text="201809">
+        <columns>
+
+          <column-Group xiheader-Text="Backlog">
+            <columns>
+              <column xicolumn-Width-Mode="percent" xipercent-Width="9.09" xiheader-Text="本月累計" xidata-Field="next2BklgAmtNt" xiheader-Align="middle" xitext-Align="right"
+                xifilter-Control="NumericRangeBox" xisort-Case-Insensitive="true" xiheader-Colors="[0x6699ff, 0x6699ff]"
+                xilabel-Function="flexiciousNmsp.UIUtils.dataGridFormatCurrencyLabelFunction"></column>
+            </columns>
+          </column-Group>
+        </columns>
+      </column-Group>
+    </columns>
+  </level>
 </div>
