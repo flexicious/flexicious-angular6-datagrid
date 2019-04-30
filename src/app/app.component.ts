@@ -42,7 +42,7 @@ export class AppComponent {
 
     const grid = event.target;
     const controller = event.target.delegate;
-
+    grid.showSpinner();
     controller.DepartmentSrv.list()
       .subscribe(function (data) {
         const filteredArray = flexiciousNmsp.UIUtils
@@ -52,6 +52,7 @@ export class AppComponent {
         stateCol.filterComboBoxDataField = 'departmentId';
         stateCol.filterComboBoxDataProvider = filteredArray;
         grid.rebuildFilter();
+        grid.hideSpinner();
       });
 
     controller.StateSrv.list()
